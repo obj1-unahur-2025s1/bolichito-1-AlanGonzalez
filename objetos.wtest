@@ -1,0 +1,43 @@
+import bolichito.*
+
+import objetos.*
+import personas.*
+
+
+test "el rojo es un color fuerte"{
+    assert.that(rojo.fuerte())
+}
+
+test "el cobre es un objeto que brilla"{
+    assert.that(cobre.brillan())
+}
+
+test "el celeste no es color fuerte" {
+    assert.notThat(celeste.fuerte())
+}
+
+test "puedo modificar el peso del muñeco"{
+    muñeco.peso(600)
+    assert.equals(600, muñeco.peso())
+}
+
+test "el peso original del muñeco es 100"{
+    assert.equals(100, muñeco.peso())
+}
+
+test "a estefania le gusta la remera" {
+    assert.that(estefania.leGusta(remera))
+}
+
+test "a estefania no le gusta el muñeco"{
+    assert.notThat(estefania.leGusta(muñeco))
+}
+
+test "El arito y el muñeco son objetos que brillan " {
+    assert.that(bolichito.esBrillante())
+}
+
+test "El bolichito tiene el mismo objeto en vidriera y mostrador, por lo tanto es monocromático" {
+    bolichito.nuevosObjetos(arito, arito)
+    assert.that(bolichito.esMonocromatico())
+}
